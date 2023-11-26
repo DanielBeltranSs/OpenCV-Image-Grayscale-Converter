@@ -1,7 +1,18 @@
 CXX = g++
-CXXFLAGS = -Wall -std=c++11 -pthread `pkg-config --cflags opencv4`
+CXXFLAGS = -Wall -std=c++11 `pkg-config --cflags opencv4`
 LIBS = `pkg-config --libs opencv4`
+DESTDIR = /usr/local/bin
+EXECUTABLE = programa2
 
-programa2: programa2.cpp
-	$(CXX) $(CXXFLAGS) -o programa2 programa2.cpp $(LIBS)
+all: $(EXECUTABLE)
 
+$(EXECUTABLE): programa2.cpp
+	$(CXX) $(CXXFLAGS) -o $(EXECUTABLE) programa2.cpp $(LIBS)
+
+install:
+	cp $(EXECUTABLE) $(DESTDIR)
+
+clean:
+	rm -f $(EXECUTABLE)
+
+.PHONY: all install clean
