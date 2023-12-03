@@ -1,6 +1,6 @@
 # Tarea2: Procesamiento paralelo de imágenes utilizando hebras.
 Alumnos: Daniel Beltran - Gabriela Carrasco
-Sección: 2
+// Sección: 2
 
 Objetivos:
 -Reforzar conceptos básicos de procesos/hebras, comunicación entre procesos y sincronizados.
